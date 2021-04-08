@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../js/bootstrap.min.css">
+    <title>Vue Demo</title>
+    <style>
+        .bline {
+            padding-top: 7px;
+        }
+    </style>
+</head>
+<body style="min-width: 700px">
+<nav class="navbar navbar-light bg-light" id="serchbar">
+    <h3 class="col-lg-3 col-md-12">欢迎</h3>
+    <form class="form-inline col-lg-9" style="text-align: right">
+        <h4 class="bline">姓名：</h4>
+        <input class="form-control mr-sm-2" v-model="user.name" type="search" placeholder="" aria-label="Search">
+        <h4 class="bline ">电话：</h4>
+        <input class="form-control mr-sm-2 " v-model="user.phone" type="search" placeholder="" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 " @click.prevent="serch" type="submit">搜索</button>
+    </form>
+
+</nav>
+<div id="app">
+    <div class="container-fluid ">
+        <br>
+        <div class="row">
+            <div class="col-lg-7 col-md-12">
+                <table class="table  table-hover">
+                    <thead>
+                    <tr style="text-align: center">
+                        <th scope="col">ID</th>
+                        <th scope="col">姓名</th>
+                        <th scope="col">年龄</th>
+                        <th scope="col">薪资</th>
+                        <th scope="col">电话</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr style="text-align: center" v-for="user in users" :key="user.id">
+                        <th v-text="user.id" scope="row"></th>
+                        <td v-text="user.name"></td>
+                        <td v-text="user.age"></td>
+                        <td v-text="user.salary"></td>
+                        <td v-text="user.phone"></td>
+                        <td>
+                            <button type="button" class="btn btn-danger" @click="dele(user.id)">删除</button>
+                            <button type="button" class="btn btn-primary" @click="update(user.id)">修改</button>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="mb-3 col-lg-4 col-md-12" style="border-left: #494f54 2px solid;margin-right: 30px">
+                <h3>姓名：</h3>
+                <input type="text" class="form-control" placeholder="Username" v-model="user.name" aria-label="Username"
+                       aria-describedby="basic-addon1">
+                <br>
+                <h3>年龄：</h3>
+                <input type="number" class="form-control" placeholder="Age" v-model="user.age" aria-label="Username"
+                       aria-describedby="basic-addon1">
+                <br>
+                <h3>薪资：</h3>
+                <input type="number" class="form-control" placeholder="Salary" v-model="user.salary"
+                       aria-label="Username"
+                       aria-describedby="basic-addon1">
+                <br>
+                <h3>电话：</h3>
+                <input type="text" class="form-control" placeholder="Phone" v-model="user.phone"
+                       aria-label="Username"
+                       aria-describedby="basic-addon1">
+                <br>
+                <div>
+                    <button type="button" class="btn btn-danger" @click="reset">重置</button>&emsp;&emsp;
+                    <button type="button" class="btn btn-primary" @click="saveUserInfo">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/axios.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/jquery.slim.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/vue-demo.js"></script>
+</html>

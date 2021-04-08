@@ -1,0 +1,16 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /vue
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/com/vue/test/dao/*.xml
+  type-aliases-package: com.vue.test.domain
+spring:
+  datasource:
+    url: jdbc:mysql://123.56.121.30:3306/vueboot?characterEncoding=utf-8
+    username: root
+    password: hyl1999
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.util.DriverDataSource

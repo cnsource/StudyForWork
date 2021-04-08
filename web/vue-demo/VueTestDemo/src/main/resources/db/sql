@@ -1,0 +1,12 @@
+CREATE TABLE `user` (
+  `id` varchar(40) NOT NULL,
+  `name` varchar(40) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `salary` double(10,2) DEFAULT NULL,
+  `phone` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `user`(`id`, `name`, `age`, `salary`, `phone`) VALUES ('49aeb044', '赵六', 25, 7500.00, '1765406981');
+INSERT INTO `user`(`id`, `name`, `age`, `salary`, `phone`) VALUES ('7e16264b', '张三', 18, 9800.00, '18678458576');
+INSERT INTO `user`(`id`, `name`, `age`, `salary`, `phone`) VALUES ('b2156d9c', '李四', 20, 7800.00, '19745837592');
